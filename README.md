@@ -1,2 +1,3 @@
-# ansible-role-taskwarrior
-An Ansible role to install Taskwarrior and Timewarrior on an Arch Linux desktop.
+# Ansible Role for Taskwarrior
+
+An Ansible role to install Taskwarrior on an Arch Linux desktop.

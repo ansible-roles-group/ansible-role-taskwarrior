@@ -1,0 +1,19 @@
+---
+
+- name: Install Taskwarrior
+  become: yes
+  pacman:
+    state: latest
+    update_cache: yes
+    name: task
+  tags:
+    - taskwarrior
+
+- name: Link the config file from my dotfiles
+  when: dotfiles_path is defined
+  file:
+    state: link
+    src: '{{ dotfiles_path }}/taskwarrior/.taskrc'
+    dest: '/home/{{ user_name }}/.taskrc'
+  tags:
+    - taskwarrior:config
